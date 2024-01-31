@@ -1,0 +1,72 @@
+# Starter lootfilter
+
+d2_dir = "C:\\Program Files (x86)\\Diablo II Resurrected"
+template = "template2.5"
+
+[show_hide_general]
+# HP/MP
+mana_minor = 1
+mana_light = 1
+mana = 1
+mana_greater = 1
+mana_super = 1
+hp_minor = 1
+hp_light = 1
+hp = 1
+hp_greater = 1
+hp_super = 1
+# Rejuvenation potions
+rejuv = 1
+full_rejuv = 1
+# Others potions
+antidote = 1
+thawing = 1
+stamina = 1
+# Scrolls
+tp = 1
+id = 1
+# Divers
+key = 1
+arrow = 1
+bolt = 1
+throwables = 1
+
+[show_hide_item_quality]
+# WARNING : this can hide ALL items of a category, including goods, if no exception is set (see below)
+normal = 1
+exceptional = 1
+elite = 1
+# Low quality, cracked, crude, damaged
+lowq = 1
+
+
+#
+# Display labels customization
+#
+
+# Diablo2 color codes table
+# ÿc- = white
+# ÿc: = Dark Green
+# ÿc; = Purple 
+# ÿc0 – white
+# ÿc1 – red
+# ÿc2 – "set" green
+# ÿc3 – "magic" blue
+# ÿc4 – "unique" gold
+# ÿc5 – gray
+# ÿc6 – black (barely visible in the profile)
+# ÿc7 – same as 4
+# ÿc8 – "crafted" amber
+# ÿc9 – "rare" yellow
+
+[label_potions]
+mana_minor = "ÿc1|ÿc0mp1"
+mana_light = "ÿc1|ÿc0mp2"
+mana = "ÿc1|ÿc0mp3"
+mana_greater = "ÿc1|ÿc0mp4"
+mana_super = "ÿc1|ÿc0mp5"
+hp_minor = "ÿc1|ÿc0hp1"
+hp_light = "ÿc1|ÿc0hp2"
+hp = "ÿc1|ÿc0hp3"
+hp_greater = "ÿc1|ÿc0hp4"
+hp_super = "ÿc1|ÿc0hp5"
