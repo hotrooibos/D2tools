@@ -6,20 +6,20 @@ import subprocess
 
 script_dir = os.path.abspath( os.path.dirname( __file__ ) )
 
-ahk_exe = "C:\Users\tda\Apps\AutoHotkey2\AutoHotkey64.exe"
-ahk_macro = "C:\Users\tda\Git\hotrooibos\Game_macros\d2\d2_standard.ahk"
+ahk_exe = r"C:\Users\tda\Apps\AutoHotkey2\AutoHotkey64.exe"
+ahk_macro = r"C:\Users\tda\Git\hotrooibos\Game_macros\d2\d2_standard.ahk"
 
-d2r_exe = "C:\Program Files (x86)\Diablo II Resurrected\Diablo II Resurrected Launcher.exe"
+d2r_exe = r"C:\Program Files (x86)\Diablo II Resurrected\Diablo II Resurrected Launcher.exe"
 d2r_args = "-mod Tdafilter_starter -txt"
 
 # Mods (as in C:\Program Files (x86)\Diablo II Resurrected\mods) :
 # - Tdafilter_starter
 # - Tdafilter
 
-d2r_alt_exe = "C:\Program Files (x86)\Diablo II Resurrected_alt\Diablo II Resurrected Launcher.exe"
+d2r_alt_exe = r"C:\Program Files (x86)\Diablo II Resurrected_alt\Diablo II Resurrected Launcher.exe"
 d2r_alt_args = "-mod Tdafilter_starter -txt"
 
-d2r_alt2_exe = "C:\Program Files (x86)\Diablo II Resurrected_alt2\Diablo II Resurrected Launcher.exe"
+d2r_alt2_exe = r"C:\Program Files (x86)\Diablo II Resurrected_alt2\Diablo II Resurrected Launcher.exe"
 d2r_alt2_args = "-mod Tdafilter_starter -txt"
 
 while (True) :
