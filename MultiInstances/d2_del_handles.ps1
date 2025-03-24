@@ -24,13 +24,42 @@ $d2r_alt2_args = "-mod Tdafilter_starter -txt"
 
 
 while (1) {
-    Write-Host "0: AHK macro"
-    Write-Host "1: D2R (toleda)"
-    Write-Host "2: D2R alt (socca)"
-    Write-Host "3: D2R alt2 (ferdi)"
-    Write-Host "9: Exit all D2R"
-    $input = Read-Host "Selection : "
+    Write-Host "[0] AHK D2 macro"
+    Write-Host "[1] Remote desktop port connection watch"
+    Write-Host "[2] D2R (toleda)"
+    Write-Host "[3] D2R (socca)"
+    Write-Host "[4] D2R (ferdi)"
+    Write-Host "[9] Kill all D2R"
+    $input = Read-Host "Selection"
  
+    function Remote-Watcher {
+        $port = Read-Host "Port to watch"
+        # Function to check if a specific port is in use
+        function Is-PortInUse {
+            param([int]$Port)
+            $netstat = netstat -an | Select-String ":$Port"
+            return $netstat -ne $null
+        }
+
+        # Loop until port is not in use
+        Write-Host "Monitoring port $port..."
+
+        while (Is-PortInUse -Port $port) {
+            Start-Sleep -Seconds 5
+        }
+
+        # Once the port is no longer in use, check for TRUC.EXE process and kill it
+        Write-Host "Port $port is no longer in use. Attempting to kill D2R..."
+        
+        $d2rProcess = Get-Process -Name "Notepad" -ErrorAction SilentlyContinue
+        if ($d2rProcess) {
+            Stop-Process -Name "Notepad"
+            Write-Host "D2R has been terminated."
+        } else {
+            Write-Host "D2R is not running."
+        }
+    }
+
     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
     {
         Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit
@@ -65,12 +94,13 @@ while (1) {
     switch ($input)
     {
         0 {& "$ahk_exe" $ahk_macro; Break}
-        1 {& "$d2r_exe" $d2r_args; Break}
-        2 {& "$d2r_alt_exe" $d2r_alt_args; Break}
-        3 {& "$d2r_alt2_exe" $d2r_alt2_args; Break}
+        1 {Remote-Watcher; Break}
+        2 {& "$d2r_exe" $d2r_args; Break}
+        3 {& "$d2r_alt_exe" $d2r_alt_args; Break}
+        4 {& "$d2r_alt2_exe" $d2r_alt2_args; Break}
         9 {Stop-Process -Name "D2R"; Break}
     }
 
-    read-host "Press ENTER to continue..."
-    Clear-Host
+    # read-host "Press ENTER to continue..."
+    # Clear-Host
 }

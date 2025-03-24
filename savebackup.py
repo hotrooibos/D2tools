@@ -29,7 +29,8 @@ else:
 
 now_datetime = strftime('%Y%m%d_%H%M%S', localtime(now_epochtime))
 sav_dir = "/mnt/c/Users/tda/Saved Games/Diablo II Resurrected/mods/Tdafilter/"
-bak_dir = f"/mnt/d/Backups/D2R/{now_datetime}_d2r_bak.zip"
+bak_dir = f"/mnt/c/{now_datetime}_d2r_bak.zip"
+# bak_dir = f"/mnt/d/Backups/D2R/{now_datetime}_d2r_bak.zip"
 
 # Create new zip file
 zip_file = zipfile.ZipFile(bak_dir, 'w',
