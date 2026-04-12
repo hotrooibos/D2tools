@@ -24,7 +24,7 @@ $d2r_alt2_args = "-mod Tdafilter_starter -txt"
 
 
 while (1) {
-    Write-Host "[0] AHK D2 macro"
+    Write-Host "`r`n[0] AHK D2 macro"
     Write-Host "[1] Remote desktop port connection watch"
     Write-Host "[2] D2R (toleda)"
     Write-Host "[3] D2R (socca)"
@@ -51,9 +51,9 @@ while (1) {
         # Once the port is no longer in use, check for TRUC.EXE process and kill it
         Write-Host "Port $port is no longer in use. Attempting to kill D2R..."
         
-        $d2rProcess = Get-Process -Name "Notepad" -ErrorAction SilentlyContinue
+        $d2rProcess = Get-Process -Name "D2R" -ErrorAction SilentlyContinue
         if ($d2rProcess) {
-            Stop-Process -Name "Notepad"
+            Stop-Process -Name "D2R"
             Write-Host "D2R has been terminated."
         } else {
             Write-Host "D2R is not running."
