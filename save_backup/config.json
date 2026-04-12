@@ -1,0 +1,16 @@
+{
+    "base_save_folder": "/mnt/c/Users/tda/Saved Games/Diablo II Resurrected",
+    "files_to_save": [
+        "Focus.*",
+        "Roy.*",
+        "Suif.*",
+        "Mule*",
+        "ModernSharedStashHardCoreV2.d2i"
+    ],
+    "output_subfolder": "CharsBak",
+    "time_api_url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/Paris",
+    "min_backup_interval": 400,
+    "max_backups": 20,
+    "debounce_seconds": 10,
+    "d2r_exe": "/mnt/c/Program Files (x86)/Diablo II Resurrected/D2R.exe"
+}
